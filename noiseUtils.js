@@ -8,7 +8,9 @@ export const addNoise = ({ x, y }, nScl = 0.001, nSize = 32) => {
   return { x: x + dx, y: y + dy };
 };
 
-export const noisyLine = (x1, y1, x2, y2, nScl, nSize, nPoints = null) => {
+export const noisyLine = (
+  x1, y1, x2, y2, nScl = 0.001, nSize = 30, nPoints = null,
+) => {
   push();
   noFill();
 
@@ -33,4 +35,14 @@ export const noisyLine = (x1, y1, x2, y2, nScl, nSize, nPoints = null) => {
   endShape();
 
   pop();
+};
+
+export const maskedNoisyLine = (
+  x1, y1, x2, y2, nScl = 0.001, nSize = 30, testFunc = () => true, nPoints = null,
+) => {
+
+};
+
+export const noisyEllipse = (x, y, xr, yr, nScl = 0.001, nSize = 30) => {
+
 };

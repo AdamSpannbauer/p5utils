@@ -1,0 +1,25 @@
+{
+  "name": "p5utils",
+  "version": "1.0.0",
+  "description": "A personal collection of utilities for p5js sketches.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamSpannbauer/p5utils.git"
+  },
+  "author": "Adam Spannbauer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdamSpannbauer/p5utils/issues"
+  },
+  "homepage": "https://github.com/AdamSpannbauer/p5utils#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-p5js": "^1.1.0",
+    "eslint-plugin-import": "^2.25.2"
+  }
+}

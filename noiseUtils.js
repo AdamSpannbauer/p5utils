@@ -8,7 +8,7 @@ export const addNoise = ({ x, y }, nScl = 0.001, nSize = 32) => {
   return { x: x + dx, y: y + dy };
 };
 
-const setNPoints = (x1, y1, x2, y2) => {
+const setNPointsLine = (x1, y1, x2, y2) => {
   const d = dist(x1, y1, x2, y2);
   const maxPoints = 512;
   // eslint-disable-next-line no-param-reassign
@@ -28,7 +28,7 @@ export const noisyLine = (
 
   if (nPoints === null) {
   // eslint-disable-next-line no-param-reassign
-    nPoints = setNPoints(x1, y1, x2, y2);
+    nPoints = setNPointsLine(x1, y1, x2, y2);
   }
 
   // eslint-disable-next-line no-param-reassign
@@ -55,7 +55,7 @@ export const maskedNoisyLine = (
 
   if (nPoints === null) {
     // eslint-disable-next-line no-param-reassign
-    nPoints = setNPoints(x1, y1, x2, y2);
+    nPoints = setNPointsLine(x1, y1, x2, y2);
   }
 
   // eslint-disable-next-line no-param-reassign
@@ -95,6 +95,27 @@ export const maskedNoisyLine = (
   pop();
 };
 
-export const noisyEllipse = (x, y, xr, yr, nScl = 0.001, nSize = 30) => {
+export const noisyEllipse = (
+  x, y, xr, yr, nScl = 0.001, nSize = 30, nPoints = null,
+) => {
+  if (nPoints === null) {
+    const maxR = xr > yr ? xr : yr;
+    // eslint-disable-next-line no-param-reassign
+    nPoints = map(maxR, 0, width, 0, 512);
+  }
 
+  // eslint-disable-next-line no-param-reassign
+  if (nPoints < 4) nPoints = 4;
+
+  const da = TWO_PI / nPoints;
+  beginShape();
+  for (let i = 0; i < nPoints; i += 1) {
+    const a = da * i;
+    const xi = x + cos(a) * xr;
+    const yi = y + sin(a) * yr;
+
+    const { x: noisyX, y: noisyY } = addNoise({ x: xi, y: yi }, nScl, nSize);
+    vertex(noisyX, noisyY);
+  }
+  endShape(CLOSE);
 };

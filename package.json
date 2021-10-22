@@ -20,6 +20,8 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-p5js": "^1.1.0",
-    "eslint-plugin-import": "^2.25.2"
+    "eslint-plugin-import": "^2.25.2",
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1"
   }
 }

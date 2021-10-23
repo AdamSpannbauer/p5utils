@@ -9,3 +9,8 @@ export {
   maskedNoisyLine,
   noisyEllipse,
 } from './noiseUtils';
+
+export {
+  drawPolygon,
+  drawNoisyPolygon,
+} from './polygonUtils';

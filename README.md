@@ -2,6 +2,10 @@
 
 A personal collection of p5js utility functions (and an excuse to learn javascript package dev).
 
+## Am I doing something wrong?
+
+I've written a lot of p5js small sketch code, but I'm a novice at larger projects in js (and a complete newbie on js package dev).  Please feel free to tell me what I could be doing better or drop a great resource.
+
 ## Contributing
 
 (requires node.js)
